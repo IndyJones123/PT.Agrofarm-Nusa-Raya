@@ -19,5 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [Home::class, 'index']);
 
-Route::get('/sesi', [SessionController::class, 'index']);
+Route::get('/PTMultiNiagaAbadi', [Home::class, 'Branch1']);
+Route::get('/PTTalentaTigaMuda', [Home::class, 'Branch2']);
+Route::get('/PTAgriPrimeInternational', [Home::class, 'Branch3']);
+Route::get('/PTAgrochem', [Home::class, 'Branch4']);
+Route::get('/PTSAP', [Home::class, 'Branch5']);
 Route::post('/sesi/login', [SessionController::class, 'login']);

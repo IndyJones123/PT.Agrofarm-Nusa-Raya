@@ -53,7 +53,7 @@
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <h1 class="logo"><a href="index.html"><img src="assets/img/AGROFARM EKSTERNAL.png"></a></h1>
+            <h1 class="logo"><a href="/"><img src="assets/img/AGROFARM EKSTERNAL.png"></a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -63,11 +63,11 @@
                     <li><a class="nav-link scrollto" href="#team">Team</a></li>
                     <li class="dropdown"><a href="#counts"><span>Branch Company</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">PT Multi Niaga Abadi</a></li>
-                            <li><a href="#">PT Talenta Tiga Muda</a></li>
-                            <li><a href="#">PT Agri Prime International</a></li>
-                            <li><a href="#">PT Agrochem</a></li>
-                            <li><a href="#">PT SAP</a></li>
+                            <li><a href="/PTMultiNiagaAbadi">PT Multi Niaga Abadi</a></li>
+                            <li><a href="/PTTalentaTigaMuda">PT Talenta Tiga Muda</a></li>
+                            <li><a href="/PTAgriPrimeInternational">PT Agri Prime International</a></li>
+                            <li><a href="/PTAgrochem">PT Agrochem</a></li>
+                            <li><a href="/PTSAP">PT SAP</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
@@ -82,7 +82,7 @@
 
     <section id="hero" class="d-flex align-items-center">
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <h1><img src="assets/img/AGROFARM EKSTERNAL.png"></h1>
+            <h1 class="logo"><a href="/"><img src="assets/img/AGROFARM EKSTERNAL.png"></a></h1>
             <h2>We Are Industrial Indonesia Company </h2>
             <div class="d-flex">
                 <a href="#about" class="btn-get-started scrollto">Get Started</a>
@@ -189,28 +189,28 @@
             <div class=" row">
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="#"><img src="assets/img/AgriPrime.png" class="img-fluid" alt=""></a>
+                    <a href="/PTAgriPrimeInternational"><img src="assets/img/AgriPrime.png" class="img-fluid" alt=""></a>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href=""><img src="assets/img/Agrochem.png" class="img-fluid" alt=""></a>
+                    <a href="PTAgrochem"><img src="assets/img/Agrochem.png" class="img-fluid" alt=""></a>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href=""><img src="assets/img/SAP.png" class="img-fluid" alt=""></a>
+                    <a href="PTSAP"><img src="assets/img/SAP.png" class="img-fluid" alt=""></a>
                 </div>
 
 
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="">
+                    <a href="PTMultiNiagaAbadi">
                         <h4 class="img-fluid" alt="">PT Multi Niaga Abadi</h4>
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="">
-                        <h4 class="img-fluid" alt="">PT Talenta Tiga Abadi</h4>
+                    <a href="PTTalentaTigaMuda">
+                        <h4 class="img-fluid" alt="">PT Talenta Tiga Muda</h4>
                     </a>
                 </div>
 

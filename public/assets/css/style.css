@@ -14,12 +14,12 @@ body {
 }
 
 a {
-  color: #3b8af2;
+  color: #18643E;
   text-decoration: none;
 }
 
 a:hover {
-  color: #3b8af2;
+  color: #18643E;
   text-decoration: none;
 }
 
@@ -588,6 +588,11 @@ h6 {
   }
 }
 
+#hero .logo {
+  width: 100%;
+  height: auto;
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -943,7 +948,7 @@ section {
 }
 
 .services .icon-box .icon i {
-  color: #3b8af2;
+  color: #18643E;
   font-size: 28px;
   transition: ease-in-out 0.3s;
 }
@@ -1425,7 +1430,7 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  background: #3b8af2;
+  background: #18643E;
 }
 
 .pricing .featured h3 {
@@ -1624,7 +1629,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3b8af2;
+  background: #18643E;
 }
 
 @-webkit-keyframes animate-loading {
@@ -1801,7 +1806,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #3b8af2;
+  background: #18643E;
   color: #fff;
   text-decoration: none;
 }
