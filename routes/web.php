@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Home;
+use App\Http\Controllers\HomeUsersController;
 use App\Http\Controllers\Layout;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\Admin\TablePerusahaanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,11 +18,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [Home::class, 'index']);
+Route::get('/', [HomeUsersController::class, 'index']);
 
-Route::get('/PTMultiNiagaAbadi', [Home::class, 'Branch1']);
-Route::get('/PTTalentaTigaMuda', [Home::class, 'Branch2']);
-Route::get('/PTAgriPrimeInternational', [Home::class, 'Branch3']);
-Route::get('/PTAgrochem', [Home::class, 'Branch4']);
-Route::get('/PTSAP', [Home::class, 'Branch5']);
-Route::post('/sesi/login', [SessionController::class, 'login']);
+Route::get('/PTMultiNiagaAbadi', [HomeUsersController::class, 'Branch1']);
+Route::get('/PTTalentaTigaMuda', [HomeUsersController::class, 'Branch2']);
+Route::get('/PTAgriPrimeInternational', [HomeUsersController::class, 'Branch3']);
+Route::get('/PTAgrochem', [HomeUsersController::class, 'Branch4']);
+Route::get('/PTSAP', [HomeUsersController::class, 'Branch5']);
+Route::get('/TablePerusahaan', [TablePerusahaanController::class, 'index']);
+Route::get('/TablePerusahaan/create', [TablePerusahaanController::class, 'create_perusahaan']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
