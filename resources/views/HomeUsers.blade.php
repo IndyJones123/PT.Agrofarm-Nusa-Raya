@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>PT.Agrofarm Nusa Raya Indonesia</title>
+    @foreach($data as $perusahaan)
+    <title>{{$perusahaan->namaperusahaan}}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -114,21 +114,21 @@
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
                         <h3>PT Agrofarm Nusa Raya.</h3>
                         <p class="fst-italic">
-                            We provide micro nutrient adequacy solutions in the form of LAKABA to increase the productivity of oil palm and other crops. Product innovation continues to be carried out to support progress in the Indonesian food industry.
+                            {{$perusahaan->deskripsi}}
                         </p>
                         <ul>
                             <li>
                                 <i class="bx bx-store-alt"></i>
                                 <div>
                                     <h5>Company Vision</h5>
-                                    <p>To be the leader of the premium fertilizer industry.</p>
+                                    <p>{{$perusahaan->visi}}</p>
                                 </div>
                             </li>
                             <li>
                                 <i class="bx bx-images"></i>
                                 <div>
                                     <h5>Company Mission</h5>
-                                    <p>Building a food industry for the world community</p>
+                                    <p>{{$perusahaan->misi}}</p>
                                 </div>
                             </li>
                         </ul>
@@ -148,7 +148,7 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="count-box">
                             <i class="bi-briefcase-fill"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="{{$perusahaan->clients}}" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Clients</p>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                     <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                         <div class="count-box">
                             <i class="bi bi-journal-richtext"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="{{$perusahaan->products}}" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Products</p>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                         <div class="count-box">
                             <i class="bi bi-headset"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="{{$perusahaan->office}}" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Office</p>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                     <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                         <div class="count-box">
                             <i class="bi bi-people"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="213" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="{{$perusahaan->workers}}" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Workers</p>
                         </div>
                     </div>
@@ -737,6 +737,7 @@
             </div>
         </div>
     </footer><!-- End Footer -->
+    @endforeach
 
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

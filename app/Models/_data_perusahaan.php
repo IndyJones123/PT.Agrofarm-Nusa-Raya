@@ -9,4 +9,5 @@ class _data_perusahaan extends Model
 {
     public $table = "_data_perusahaan";
     use HasFactory;
+    public $fillable = ['namaperusahaan', 'clients', 'office', 'shortdeskripsi', 'deskripsi', 'products', 'workers', 'visi', 'misi'];
 }

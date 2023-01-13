@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\_data_perusahaan;
 
 class HomeUsersController extends Controller
 {
     public function index()
     {
-        return View('HomeUsers');
+        $data = DB::select('select * from _data_perusahaan WHERE id = 1');
+        return View('HomeUsers', compact(["data"]));
     }
     public function Branch1()
     {

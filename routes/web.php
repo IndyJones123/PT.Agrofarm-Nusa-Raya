@@ -25,10 +25,14 @@ Route::get('/PTTalentaTigaMuda', [HomeUsersController::class, 'Branch2']);
 Route::get('/PTAgriPrimeInternational', [HomeUsersController::class, 'Branch3']);
 Route::get('/PTAgrochem', [HomeUsersController::class, 'Branch4']);
 Route::get('/PTSAP', [HomeUsersController::class, 'Branch5']);
-Route::get('/TablePerusahaan', [TablePerusahaanController::class, 'index']);
-Route::get('/TablePerusahaan/create', [TablePerusahaanController::class, 'create_perusahaan']);
 
 
 Auth::routes();
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/TablePerusahaan', [TablePerusahaanController::class, 'index']);
+    Route::get('/TablePerusahaan/create', [TablePerusahaanController::class, 'create_perusahaan']);
+    Route::post('/TablePerusahaan/create/store', [TablePerusahaanController::class, 'store']);
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
