@@ -46,4 +46,37 @@ class TablePerusahaanController extends Controller
             ]);
         return View('Admin.home', compact(["data"]));
     }
+    public function edit($id)
+    {
+        $data = _data_perusahaan::find($id);
+        return view('Admin.CRUDperusahaan.editperusahaan', compact(["data"]));
+    }
+    public function update($id, Request $request)
+    {
+        $namaperusahaan = $request->input('namaperusahaan');
+        $clients = $request->input('clients');
+        $office = $request->input('office');
+        $shortdeskripsi = $request->input('shortdeskripsi');
+        $deskripsi = $request->input('deskripsi');
+        $products = $request->input('products');
+        $workers = $request->input('workers');
+        $visi = $request->input('visi');
+        $misi = $request->input('misi');
+
+        $data = _data_perusahaan::find($id);
+
+        $data = DB::table('_data_perusahaan')
+            ->update([
+                'namaperusahaan' => $namaperusahaan,
+                'clients' => $clients,
+                'office' => $office,
+                'shortdeskripsi' => $shortdeskripsi,
+                'deskripsi' => $deskripsi,
+                'products' => $products,
+                'workers' => $workers,
+                'visi' => $visi,
+                'misi' => $misi,
+            ]);
+        return View('Admin.home');
+    }
 }

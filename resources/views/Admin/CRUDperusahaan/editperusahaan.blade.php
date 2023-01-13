@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('Admin/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('Admin/assets/css/style.css')}}">
 
 </head>
 
@@ -179,46 +180,98 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="/TablePerusahaan/create">
-                                <h6 class="m-0 font-weight-bold text-primary">+ Tambahkan Data Perusahaan</h6>
-                            </a>
+                            <h6 class="m-0 font-weight-bold text-primary">Edit Data Perusahaan</h6>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Perusahaan</th>
-                                            <th>Short Deskripsi</th>
-                                            <th>Deskripsi</th>
-                                            <th>Clients</th>
-                                            <th>Products</th>
-                                            <th>Workers</th>
-                                            <th>Office</th>
-                                            <th>Visi</th>
-                                            <th>Misi</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($data as $perusahaan)
-                                        <tr>
-                                            <td>{{$perusahaan->namaperusahaan}}</td>
-                                            <td>{{$perusahaan->shortdeskripsi}}</td>
-                                            <td>{{$perusahaan->deskripsi}}</td>
-                                            <td>{{$perusahaan->clients}}</td>
-                                            <td>{{$perusahaan->products}}</td>
-                                            <td>{{$perusahaan->workers}}</td>
-                                            <td>{{$perusahaan->office}}</td>
-                                            <td>{{$perusahaan->visi}}</td>
-                                            <td>{{$perusahaan->misi}}</td>
-                                            <td><a href="/TablePerusahaan/{{$perusahaan->id}}/edit">Update</a> || Delete</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
+                        <div class="container">
+                            <form action="/TablePerusahaan/{{$data->id}}" method="POST">
+                                @method('put')
+                                @csrf
+                                <table class="mx-auto text-center">
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->namaperusahaan}}" name="namaperusahaan" autocomplete="off" class="input">
+                                                <label class="user-label">Nama Perusahaan (Text)</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->clients}}" name="clients" autocomplete="off" class="input">
+                                                <label class="user-label">Clients (Angka)</label>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->office}}" name="office" autocomplete="off" class="input">
+                                                <label class="user-label">Office (Angka)</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->shortdeskripsi}}" name="shortdeskripsi" autocomplete="off" class="input">
+                                                <label class="user-label">Short Deskripsi (Text)</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->products}}" name="products" autocomplete="off" class="input">
+                                                <label class="user-label">Products (Angka)</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->workers}}" name="workers" autocomplete="off" class="input">
+                                                <label class="user-label">Workers (Angka)</label>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->deskripsi}}" name="deskripsi" autocomplete="off" class="input">
+                                                <label class="user-label">Deskripsi (Text)</label>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->visi}}" name="visi" autocomplete="off" class="input">
+                                                <label class="user-label">Visi (Text)</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->misi}}" name="misi" autocomplete="off" class="input">
+                                                <label class="user-label">Misi (Text)</label>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
                                 </table>
-                            </div>
+                                <div class="container suare-box d-flex justify-content-center">
+                                    <button type="submit" name="submit" value="Save">
+
+                                        <div class="svg-wrapper-1 ">
+                                            <div class="svg-wrapper ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                                    <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <span>Submit</span>
+                                    </button>
+                                </div>
+                                <br><br>
+                            </form>
                         </div>
+
                     </div>
 
                 </div>
@@ -286,6 +339,8 @@
         <!-- Page level custom scripts -->
         <script src="{{asset('Admin/assets/js/demo/chart-area-demo.js')}}"></script>
         <script src="((asset('Admin/assets/js/demo/chart-pie-demo.js')}}"></script>
+
 </body>
+
 
 </html>

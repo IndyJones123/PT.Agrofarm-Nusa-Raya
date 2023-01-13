@@ -31,8 +31,11 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/TablePerusahaan', [TablePerusahaanController::class, 'index']);
+    Route::get('/TablePerusahaan/TablePerusahaan', [TablePerusahaanController::class, 'index']);
     Route::get('/TablePerusahaan/create', [TablePerusahaanController::class, 'create_perusahaan']);
     Route::post('/TablePerusahaan/create/store', [TablePerusahaanController::class, 'store']);
+    Route::get('/TablePerusahaan/{id}/edit', [TablePerusahaanController::class, 'edit']);
+    Route::put('/TablePerusahaan/{id}', [TablePerusahaanController::class, 'update']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
