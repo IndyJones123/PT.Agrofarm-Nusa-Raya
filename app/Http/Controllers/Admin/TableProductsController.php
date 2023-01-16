@@ -61,4 +61,11 @@ class TableProductsController extends Controller
         $data = _data_products::all();
         return View('Admin.tableproducts', compact(["data"]));
     }
+    public function delete($id)
+    {
+        $data = _data_products::find($id);
+        $data->delete();
+        $data = _data_products::all();
+        return View('Admin.tableproducts', compact(["data"]));
+    }
 }

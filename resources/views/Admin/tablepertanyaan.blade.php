@@ -200,7 +200,16 @@
                                             <td>{{$pertanyaan->namaperusahaan}}</td>
                                             <td>{{$pertanyaan->pertanyaan}}</td>
                                             <td>{{$pertanyaan->jawaban}}</td>
-                                            <td><a href="/TablePertanyaan/{{$pertanyaan->id}}/edit">Update</a> || <a href="/TablePertanyaan/{{$pertanyaan->id}}/edit">Delete</a></td>
+                                            <td>
+                                                <a href="/TablePertanyaan/{{$pertanyaan->id}}/edit" class="btn btn-warning">Update</a>
+                                                <br><br>
+                                                <form action="/TablePertanyaan/{{$pertanyaan->id}}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
+
                                         </tr>
                                         @endforeach
                                     </tbody>

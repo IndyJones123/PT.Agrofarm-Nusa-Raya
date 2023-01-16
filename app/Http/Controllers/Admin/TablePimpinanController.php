@@ -56,4 +56,11 @@ class TablePimpinanController extends Controller
         $data = data_pimpinan::all();
         return View('Admin.tablepimpinan', compact(["data"]));
     }
+    public function delete($id)
+    {
+        $data = data_pimpinan::find($id);
+        $data->delete();
+        $data = data_pimpinan::all();
+        return View('Admin.tablepimpinan', compact(["data"]));
+    }
 }

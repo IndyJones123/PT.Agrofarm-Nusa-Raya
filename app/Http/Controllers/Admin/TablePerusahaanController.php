@@ -80,4 +80,11 @@ class TablePerusahaanController extends Controller
         $data = _data_perusahaan::all();
         return View('Admin.tableperusahaan', compact(["data"]));
     }
+    public function delete($id)
+    {
+        $data = _data_perusahaan::find($id);
+        $data->delete();
+        $data = _data_perusahaan::all();
+        return View('Admin.tableperusahaan', compact(["data"]));
+    }
 }

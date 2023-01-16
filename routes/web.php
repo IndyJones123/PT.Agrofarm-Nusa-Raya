@@ -40,24 +40,28 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/TablePerusahaan/create/store', [TablePerusahaanController::class, 'store']);
     Route::get('/TablePerusahaan/{id}/edit', [TablePerusahaanController::class, 'edit']);
     Route::put('/TablePerusahaan/{id}', [TablePerusahaanController::class, 'update']);
+    Route::delete('/TablePerusahaan/{id}', [TablePerusahaanController::class, 'delete']);
     //TablePertanyaan
     Route::get('/TablePertanyaan', [TablePertanyaanController::class, 'index']);
     Route::get('/TablePertanyaan/create', [TablePertanyaanController::class, 'create_perusahaan']);
     Route::post('/TablePertanyaan/create/store', [TablePertanyaanController::class, 'store']);
     Route::get('/TablePertanyaan/{id}/edit', [TablePertanyaanController::class, 'edit']);
     Route::put('/TablePertanyaan/{id}', [TablePertanyaanController::class, 'update']);
+    Route::delete('/TablePertanyaan/{id}', [TablePertanyaanController::class, 'delete']);
     //TablePimpinan
     Route::get('/TablePimpinan', [TablePimpinanController::class, 'index']);
     Route::get('/TablePimpinan/create', [TablePimpinanController::class, 'create_perusahaan']);
     Route::post('/TablePimpinan/create/store', [TablePimpinanController::class, 'store']);
     Route::get('/TablePimpinan/{id}/edit', [TablePimpinanController::class, 'edit']);
     Route::put('/TablePimpinan/{id}', [TablePimpinanController::class, 'update']);
+    Route::delete('/TablePimpinan/{id}', [TablePimpinanController::class, 'delete']);
     //TableProducts
     Route::get('/TableProducts', [TableProductsController::class, 'index']);
     Route::get('/TableProducts/create', [TableProductsController::class, 'create_perusahaan']);
     Route::post('/TableProducts/create/store', [TableProductsController::class, 'store']);
     Route::get('/TableProducts/{id}/edit', [TableProductsController::class, 'edit']);
     Route::put('/TableProducts/{id}', [TableProductsController::class, 'update']);
+    Route::delete('/TableProducts/{id}', [TableProductsController::class, 'delete']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

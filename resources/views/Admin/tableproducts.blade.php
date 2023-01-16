@@ -202,7 +202,15 @@
                                             <td>{{$Products->namaproducts}}</td>
                                             <td>{{$Products->deskripsi}}</td>
                                             <td>{{$Products->tanggalterbit}}</td>
-                                            <td><a href="/TableProducts/{{$Products->id}}/edit">Update</a> || Delete</td>
+                                            <td>
+                                                <a href="/TableProducts/{{$Products->id}}/edit" class="btn btn-warning">Update</a>
+                                                <br><br>
+                                                <form action="/TableProducts/{{$Products->id}}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

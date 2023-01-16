@@ -56,4 +56,11 @@ class TablePertanyaanController extends Controller
         $data = _data_pertanyaan::all();
         return View('Admin.tablepertanyaan', compact(["data"]));
     }
+    public function delete($id)
+    {
+        $data = _data_pertanyaan::find($id);
+        $data->delete();
+        $data = _data_pertanyaan::all();
+        return View('Admin.tablepertanyaan', compact(["data"]));
+    }
 }

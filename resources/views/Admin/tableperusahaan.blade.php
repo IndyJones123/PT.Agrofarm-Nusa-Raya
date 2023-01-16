@@ -212,7 +212,15 @@
                                             <td>{{$perusahaan->office}}</td>
                                             <td>{{$perusahaan->visi}}</td>
                                             <td>{{$perusahaan->misi}}</td>
-                                            <td><a href="/TablePerusahaan/{{$perusahaan->id}}/edit">Update</a> || Delete</td>
+                                            <td>
+                                                <a href="/TablePerusahaan/{{$perusahaan->id}}/edit" class="btn btn-warning">Update</a>
+                                                <br><br>
+                                                <form action="/TablePerusahaan/{{$perusahaan->id}}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

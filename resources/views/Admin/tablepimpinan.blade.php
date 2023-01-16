@@ -198,7 +198,15 @@
                                             <td>{{$Pimpinan->namaperusahaan}}</td>
                                             <td>{{$Pimpinan->namapimpinan}}</td>
                                             <td>{{$Pimpinan->gelar}}</td>
-                                            <td><a href="/TablePimpinan/{{$Pimpinan->id}}/edit">Update</a> || <a href="/TablePimpinan/{{$Pimpinan->id}}/edit">Delete</a></td>
+                                            <td>
+                                                <a href="/TablePimpinan/{{$Pimpinan->id}}/edit" class="btn btn-warning">Update</a>
+                                                <br><br>
+                                                <form action="/TablePimpinan/{{$Pimpinan->id}}" method="POST">
+                                                    {{ csrf_field() }}
+                                                    {{ method_field('DELETE') }}
+                                                    <button type="submit" class="btn btn-danger">DELETE</button>
+                                                </form>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
