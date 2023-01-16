@@ -12,11 +12,12 @@
     <title>Agrofarm Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="Admin/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('Admin/assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="Admin/assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{asset('Admin/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('Admin/assets/css/style.css')}}">
 
 </head>
 
@@ -36,6 +37,16 @@
             </a>
 
             <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/home">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
             <hr class="sidebar-divider">
 
             <!-- Heading -->
@@ -46,25 +57,25 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/TablePerusahaan">
+                <a class="nav-link" href="TablePertanyaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Perusahaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/TableProducts">
+                <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Products</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/TablePertanyaan">
+                <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pertanyaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/TablePimpinan">
+                <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pimpinan</span></a>
             </li>
@@ -144,10 +155,14 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                         </li>
 
@@ -160,49 +175,61 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables Data Perusahaan</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tables Data Pertanyaan</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="/TablePerusahaan/create">
-                                <h6 class="m-0 font-weight-bold text-primary">+ Tambahkan Data Perusahaan</h6>
-                            </a>
+                            <h6 class="m-0 font-weight-bold text-primary">Edit Data Pertanyaan</h6>
                         </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Perusahaan</th>
-                                            <th>Deskripsi</th>
-                                            <th>Clients</th>
-                                            <th>Products</th>
-                                            <th>Workers</th>
-                                            <th>Office</th>
-                                            <th>Visi</th>
-                                            <th>Misi</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($data as $perusahaan)
-                                        <tr>
-                                            <td>{{$perusahaan->namaperusahaan}}</td>
-                                            <td>{{$perusahaan->deskripsi}}</td>
-                                            <td>{{$perusahaan->clients}}</td>
-                                            <td>{{$perusahaan->products}}</td>
-                                            <td>{{$perusahaan->workers}}</td>
-                                            <td>{{$perusahaan->office}}</td>
-                                            <td>{{$perusahaan->visi}}</td>
-                                            <td>{{$perusahaan->misi}}</td>
-                                            <td>Update || Delete</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
+                        <div class="container">
+                            <form action="/TablePertanyaan/{{$data->id}}" method="POST">
+                                @method('put')
+                                @csrf
+                                <table class="mx-auto text-center">
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" value="{{$data->namaperusahaan}}" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
+                                                <label class="user-label">Nama Perusahaan</label>
+                                            </div>
+
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->pertanyaan}}" name="pertanyaan" autocomplete="off" class="input"></input>
+                                                <label class="user-label">Pertanyaan</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$data->jawaban}}" name="jawaban" autocomplete="off" class="input"></input>
+                                                <label class="user-label">Jawaban</label>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+
                                 </table>
-                            </div>
+                                <div class="container suare-box d-flex justify-content-center">
+                                    <button type="submit" name="submit" value="Save">
+
+                                        <div class="svg-wrapper-1 ">
+                                            <div class="svg-wrapper ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                                    <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                                                </svg>
+                                            </div>
+                                        </div>
+
+                                        <span>Submit</span>
+                                    </button>
+                                </div>
+                                <br><br>
+                            </form>
                         </div>
+
                     </div>
 
                 </div>
@@ -255,22 +282,23 @@
         </div>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="Admin/assets/vendor/jquery/jquery.min.js"></script>
-        <script src="Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="{{asset('Admin/assets/vendor/jquery/jquery.min.js')}}"></script>
+        <script src="{{asset('Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
         <!-- Core plugin JavaScript-->
-        <script src="Admin/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="{{asset('Admin/assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="Admin/assets/js/sb-admin-2.min.js"></script>
+        <script src="{{asset('Admin/assets/js/sb-admin-2.min.js')}}"></script>
 
         <!-- Page level plugins -->
-        <script src="Admin/assets/vendor/chart.js/Chart.min.js"></script>
+        <script src="{{asset('Admin/assets/vendor/chart.js/Chart.min.js')}}"></script>
 
         <!-- Page level custom scripts -->
-        <script src="Admin/assets/js/demo/chart-area-demo.js"></script>
-        <script src="Admin/assets/js/demo/chart-pie-demo.js"></script>
+        <script src="{{asset('Admin/assets/js/demo/chart-area-demo.js')}}"></script>
+        <script src="((asset('Admin/assets/js/demo/chart-pie-demo.js')}}"></script>
 
 </body>
+
 
 </html>

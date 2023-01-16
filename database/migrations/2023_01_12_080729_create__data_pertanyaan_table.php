@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('_data_pertanyaan', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
-            $table->string('answer');
+            $table->string('namaperusahaan');
+            $table->string('pertanyaan');
+            $table->string('jawaban');
             $table->timestamps();
         });
     }

@@ -12,11 +12,11 @@
     <title>Agrofarm Admin</title>
 
     <!-- Custom fonts for this template-->
-    <link href="Admin/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('Admin/assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="Admin/assets/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="{{asset('Admin/assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -56,25 +56,25 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="TablePerusahaan">
+                <a class="nav-link" href="/TablePertanyaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Perusahaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TableProducts">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Products</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TablePertanyaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pertanyaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TablePimpinan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pimpinan</span></a>
             </li>
@@ -135,7 +135,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
 
@@ -154,10 +154,14 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
                                 </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                         </li>
 
@@ -170,13 +174,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables Data Perusahaan</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tables Data Pertanyaan</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="/TablePerusahaan/create">
-                                <h6 class="m-0 font-weight-bold text-primary">+ Tambahkan Data Perusahaan</h6>
+                            <a href="/TablePertanyaan/create">
+                                <h6 class="m-0 font-weight-bold text-primary">+ Tambahkan Data Pertanyaan</h6>
                             </a>
                         </div>
                         <div class="card-body">
@@ -185,28 +189,18 @@
                                     <thead>
                                         <tr>
                                             <th>Nama Perusahaan</th>
-                                            <th>Deskripsi</th>
-                                            <th>Clients</th>
-                                            <th>Products</th>
-                                            <th>Workers</th>
-                                            <th>Office</th>
-                                            <th>Visi</th>
-                                            <th>Misi</th>
+                                            <th>Pertanyaan</th>
+                                            <th>Jawaban</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($data as $perusahaan)
+                                        @foreach($data as $pertanyaan)
                                         <tr>
-                                            <td>{{$perusahaan->namaperusahaan}}</td>
-                                            <td>{{$perusahaan->deskripsi}}</td>
-                                            <td>{{$perusahaan->clients}}</td>
-                                            <td>{{$perusahaan->products}}</td>
-                                            <td>{{$perusahaan->workers}}</td>
-                                            <td>{{$perusahaan->office}}</td>
-                                            <td>{{$perusahaan->visi}}</td>
-                                            <td>{{$perusahaan->misi}}</td>
-                                            <td>Update || Delete</td>
+                                            <td>{{$pertanyaan->namaperusahaan}}</td>
+                                            <td>{{$pertanyaan->pertanyaan}}</td>
+                                            <td>{{$pertanyaan->jawaban}}</td>
+                                            <td><a href="/TablePertanyaan/{{$pertanyaan->id}}/edit">Update</a> || <a href="/TablePertanyaan/{{$pertanyaan->id}}/edit">Delete</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -265,22 +259,21 @@
         </div>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="Admin/assets/vendor/jquery/jquery.min.js"></script>
-        <script src="Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="{{asset('Admin/assets/vendor/jquery/jquery.min.js')}}"></script>
+        <script src="{{asset('Admin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
         <!-- Core plugin JavaScript-->
-        <script src="Admin/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="{{asset('Admin/assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
         <!-- Custom scripts for all pages-->
-        <script src="Admin/assets/js/sb-admin-2.min.js"></script>
+        <script src="{{asset('Admin/assets/js/sb-admin-2.min.js')}}"></script>
 
         <!-- Page level plugins -->
-        <script src="Admin/assets/vendor/chart.js/Chart.min.js"></script>
+        <script src="{{asset('Admin/assets/vendor/chart.js/Chart.min.js')}}"></script>
 
         <!-- Page level custom scripts -->
-        <script src="Admin/assets/js/demo/chart-area-demo.js"></script>
-        <script src="Admin/assets/js/demo/chart-pie-demo.js"></script>
-
+        <script src="{{asset('Admin/assets/js/demo/chart-area-demo.js')}}"></script>
+        <script src="((asset('Admin/assets/js/demo/chart-pie-demo.js')}}"></script>
 </body>
 
 </html>

@@ -7,13 +7,12 @@ use App\Models\_data_perusahaan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-
-class TablePerusahaanController extends Controller
+class TableProductsController extends Controller
 {
     public function index()
     {
         $data = _data_perusahaan::all();
-        return View('Admin.tableperusahaan', compact(["data"]));
+        return View('Admin.tableproducts', compact(["data"]));
     }
     public function create_perusahaan()
     {
@@ -65,18 +64,18 @@ class TablePerusahaanController extends Controller
 
         $data = _data_perusahaan::find($id);
 
-        $data->update([
-            'namaperusahaan' => $namaperusahaan,
-            'clients' => $clients,
-            'office' => $office,
-            'shortdeskripsi' => $shortdeskripsi,
-            'deskripsi' => $deskripsi,
-            'products' => $products,
-            'workers' => $workers,
-            'visi' => $visi,
-            'misi' => $misi,
-        ]);
-        $data = _data_perusahaan::all();
-        return View('Admin.tableperusahaan', compact(["data"]));
+        $data = DB::table('_data_perusahaan')
+            ->update([
+                'namaperusahaan' => $namaperusahaan,
+                'clients' => $clients,
+                'office' => $office,
+                'shortdeskripsi' => $shortdeskripsi,
+                'deskripsi' => $deskripsi,
+                'products' => $products,
+                'workers' => $workers,
+                'visi' => $visi,
+                'misi' => $misi,
+            ]);
+        return View('Admin.home');
     }
 }
