@@ -57,25 +57,25 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="TablePerusahaan">
+                <a class="nav-link" href="/TablePerusahaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Perusahaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TableProducts">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Products</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TablePertanyaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pertanyaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TablePimpinan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pimpinan</span></a>
             </li>
@@ -180,7 +180,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Perusahaan</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tambah Data Pertanyaan</h6>
                         </div>
                         <div class="container">
                             <form action="/TablePertanyaan/create/store" method="POST">

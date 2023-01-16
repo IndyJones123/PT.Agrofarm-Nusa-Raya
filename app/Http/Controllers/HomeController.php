@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\_data_perusahaan;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Admin/home');
+        $dataperusahaan = _data_perusahaan::count();
+        return view('Admin/home', compact(["dataperusahaan"]));
     }
 }

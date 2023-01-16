@@ -44,7 +44,8 @@ class TablePerusahaanController extends Controller
                 'visi' => $visi,
                 'misi' => $misi,
             ]);
-        return View('Admin.home', compact(["data"]));
+        $data = _data_perusahaan::all();
+        return View('Admin.tableperusahaan', compact(["data"]));
     }
     public function edit($id)
     {

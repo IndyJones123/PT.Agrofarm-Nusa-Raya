@@ -174,13 +174,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables Data Perusahaan</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Table Data Products</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="/TablePerusahaan/create">
-                                <h6 class="m-0 font-weight-bold text-primary">+ Tambahkan Data Perusahaan</h6>
+                            <a href="/TableProducts/create">
+                                <h6 class="m-0 font-weight-bold text-primary">+ Tambahkan Data Products</h6>
                             </a>
                         </div>
                         <div class="card-body">
@@ -188,31 +188,21 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nama Perusahaan</th>
-                                            <th>Short Deskripsi</th>
+                                            <th>Nama Products</th>
+                                            <th>Nama Products</th>
                                             <th>Deskripsi</th>
-                                            <th>Clients</th>
-                                            <th>Products</th>
-                                            <th>Workers</th>
-                                            <th>Office</th>
-                                            <th>Visi</th>
-                                            <th>Misi</th>
+                                            <th>Tanggal Terbit</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($data as $perusahaan)
+                                        @foreach($data as $Products)
                                         <tr>
-                                            <td>{{$perusahaan->namaperusahaan}}</td>
-                                            <td>{{$perusahaan->shortdeskripsi}}</td>
-                                            <td>{{$perusahaan->deskripsi}}</td>
-                                            <td>{{$perusahaan->clients}}</td>
-                                            <td>{{$perusahaan->products}}</td>
-                                            <td>{{$perusahaan->workers}}</td>
-                                            <td>{{$perusahaan->office}}</td>
-                                            <td>{{$perusahaan->visi}}</td>
-                                            <td>{{$perusahaan->misi}}</td>
-                                            <td><a href="/TablePerusahaan/{{$perusahaan->id}}/edit">Update</a> || Delete</td>
+                                            <td>{{$Products->namaperusahaan}}</td>
+                                            <td>{{$Products->namaproducts}}</td>
+                                            <td>{{$Products->deskripsi}}</td>
+                                            <td>{{$Products->tanggalterbit}}</td>
+                                            <td><a href="/TableProducts/{{$Products->id}}/edit">Update</a> || Delete</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -56,7 +56,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="/TablePertanyaan">
+                <a class="nav-link" href="/TablePerusahaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Perusahaan</span></a>
             </li>

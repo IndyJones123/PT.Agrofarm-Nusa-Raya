@@ -57,25 +57,25 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="TablePerusahaan">
+                <a class="nav-link" href="/TablePerusahaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Perusahaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TableProducts">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Products</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TablePertanyaan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pertanyaan</span></a>
             </li>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="/TablePimpinan">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Table Pimpinan</span></a>
             </li>

@@ -48,7 +48,16 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/TablePertanyaan/{id}', [TablePertanyaanController::class, 'update']);
     //TablePimpinan
     Route::get('/TablePimpinan', [TablePimpinanController::class, 'index']);
+    Route::get('/TablePimpinan/create', [TablePimpinanController::class, 'create_perusahaan']);
+    Route::post('/TablePimpinan/create/store', [TablePimpinanController::class, 'store']);
+    Route::get('/TablePimpinan/{id}/edit', [TablePimpinanController::class, 'edit']);
+    Route::put('/TablePimpinan/{id}', [TablePimpinanController::class, 'update']);
+    //TableProducts
     Route::get('/TableProducts', [TableProductsController::class, 'index']);
+    Route::get('/TableProducts/create', [TableProductsController::class, 'create_perusahaan']);
+    Route::post('/TableProducts/create/store', [TableProductsController::class, 'store']);
+    Route::get('/TableProducts/{id}/edit', [TableProductsController::class, 'edit']);
+    Route::put('/TableProducts/{id}', [TableProductsController::class, 'update']);
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
