@@ -183,37 +183,55 @@
                             <h6 class="m-0 font-weight-bold text-primary">Edit Data Products</h6>
                         </div>
                         <div class="container">
-                            <form action="/TableProducts/{{$data->id}}" method="POST">
+                            <form action="/TableProducts/{{$id}}" method="POST" enctype="multipart/form-data">
                                 @method('put')
                                 @csrf
                                 <table class="mx-auto text-center">
                                     <tr>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" value="{{$data->namaperusahaan}}" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
+                                                <input required="" value="{{$namaperusahaan}}" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Perusahaan</label>
                                             </div>
 
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="text" value="{{$data->namaproducts}}" name="namaproducts" autocomplete="off" class="input"></input>
+                                                <input required="" type="text" value="{{$namaproducts}}" name="namaproducts" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Pimpinan</label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="text" value="{{$data->deskripsi}}" name="deskripsi" autocomplete="off" class="input"></input>
+                                                <input required="" type="text" value="{{$jenisproducts}}" name="jenisproducts" autocomplete="off" class="input"></input>
+                                                <label class="user-label">Jenis Products</label>
+                                            </div>
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$deskripsi}}" name="deskripsi" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Deskripsi</label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="date" value="{{$data->tanggalterbit}}" name="tanggalterbit" autocomplete="off" class="input"></input>
+                                                <input required="" type="date" value="{{$tanggalterbit}}" name="tanggalterbit" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Tanggal Terbit</label>
                                             </div>
                                         </td>
+                                        <td>
+                                            <div class="input-group">
+                                                @if($photo)
+                                                <img src="{{asset('storage/'.$photo)}}" alt="" class="img-thumbnail" style="width: 50%;">
+                                                @endif
+                                                <input required="" type="file" value="{{$photo}}" name="photo" autocomplete="off" class="input" accept="image/*"></input>
 
+                                            </div>
+                                        </td>
                                     </tr>
 
                                 </table>

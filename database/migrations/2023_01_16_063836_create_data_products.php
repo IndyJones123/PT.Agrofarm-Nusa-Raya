@@ -17,8 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('namaperusahaan');
             $table->string('namaproducts');
+            $table->string('jenisproducts');
             $table->string('deskripsi');
             $table->string('tanggalterbit');
+            $table->string('photo', 300);
             $table->timestamps();
         });
     }

@@ -54,7 +54,7 @@
     <header id="header" class="d-flex align-items-center">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <h1 class="logo"><a href="/"><img src="assets/img/AGROFARM EKSTERNAL.png"></a></h1>
+            <h1 class="logo"><a href="/"><img src="{{asset('storage/'.$perusahaan->photobesar)}}"></a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>
@@ -83,7 +83,7 @@
 
     <section id="hero" class="d-flex align-items-center">
         <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <h1 class="logo"><a href="/"><img src="assets/img/AGROFARM EKSTERNAL.png"></a></h1>
+            <h1 class="logo"><a href="/"><img src="{{asset('storage/'.$perusahaan->photobesar)}}"></a></h1>
             <h2>We Are Industrial Indonesia Company </h2>
             <div class="d-flex">
                 <a href="#about" class="btn-get-started scrollto">Get Started</a>
@@ -105,15 +105,16 @@
                     <h3>Find Out More <span>About Us</span></h3>
                     <p>
 
-                        Our Company Was Officially Established In 2005 As PT Agrofarm Nusa Raya.</p>
+                        {{$perusahaan->shortdeskripsi}}
+                    </p>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                        <img src="assets/img/about.jpg" class="img-fluid" alt="">
+                        <img src="{{asset('storage/'.$perusahaan->photokecil)}}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                        <h3>PT Agrofarm Nusa Raya.</h3>
+                        <h3>{{$perusahaan->namaperusahaan}}</h3>
                         <p class="fst-italic">
                             {{$perusahaan->deskripsi}}
                         </p>
@@ -188,32 +189,11 @@
             <div class=" container" data-aos="zoom-in">
 
             <div class=" row">
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="/PTAgriPrimeInternational"><img src="assets/img/AgriPrime.png" class="img-fluid" alt=""></a>
+                @foreach($databranch as $data2)
+                <div class="col-lg-2 col-md-4 col-6 d-flex ">
+                    <a href="/PTAgriPrimeInternational"><img src="{{asset('storage/'.$data2->photobesar)}}" class="img-fluid" alt=""></a>
                 </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="PTAgrochem"><img src="assets/img/Agrochem.png" class="img-fluid" alt=""></a>
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="PTSAP"><img src="assets/img/SAP.png" class="img-fluid" alt=""></a>
-                </div>
-
-
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="PTMultiNiagaAbadi">
-                        <h4 class="img-fluid" alt="">PT Multi Niaga Abadi</h4>
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
-                    <a href="PTTalentaTigaMuda">
-                        <h4 class="img-fluid" alt="">PT Talenta Tiga Muda</h4>
-                    </a>
-                </div>
+                @endforeach
 
             </div>
 

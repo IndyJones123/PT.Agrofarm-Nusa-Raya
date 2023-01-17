@@ -183,9 +183,9 @@
                             <h6 class="m-0 font-weight-bold text-primary">Tambah Data Products</h6>
                         </div>
                         <div class="container">
-                            <form action="/TableProducts/create/store" method="POST">
+                            <form action="/TableProducts/create/store" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <table class="mx-auto text-center">
+                                <table class=" mx-auto text-center">
                                     <tr>
                                         <td>
                                             <div class="input-group">
@@ -202,6 +202,14 @@
                                         </td>
                                         <td>
                                             <div class="input-group">
+                                                <input required="" type="text" name="jenisproducts" autocomplete="off" class="input"></input>
+                                                <label class="user-label">Jenis Products</label>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
                                                 <input required="" type="text" name="deskripsi" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Deskripsi</label>
                                             </div>
@@ -212,7 +220,13 @@
                                                 <label class="user-label">Tanggal Terbit</label>
                                             </div>
                                         </td>
-
+                                        <td>
+                                            <div class="input-group">
+                                                <div class="input-group">
+                                                    <input required="" type="file" name="photo" autocomplete="off" class="input" accept="image/*"></input>
+                                                </div>
+                                            </div>
+                                        </td>
                                     </tr>
 
                                 </table>

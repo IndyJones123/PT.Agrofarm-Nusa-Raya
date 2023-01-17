@@ -188,10 +188,12 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Nama Perusahaan</th>
                                             <th>Nama Products</th>
-                                            <th>Nama Products</th>
+                                            <th>Jenis Products</th>
                                             <th>Deskripsi</th>
                                             <th>Tanggal Terbit</th>
+                                            <th>Foto Produk</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -200,8 +202,10 @@
                                         <tr>
                                             <td>{{$Products->namaperusahaan}}</td>
                                             <td>{{$Products->namaproducts}}</td>
+                                            <td>{{$Products->jenisproducts}}</td>
                                             <td>{{$Products->deskripsi}}</td>
                                             <td>{{$Products->tanggalterbit}}</td>
+                                            <td><img src="{{asset('storage/'.$Products->photo)}}" alt="" class="img-thumbnail" style="width: 10%;"></td>
                                             <td>
                                                 <a href="/TableProducts/{{$Products->id}}/edit" class="btn btn-warning">Update</a>
                                                 <br><br>

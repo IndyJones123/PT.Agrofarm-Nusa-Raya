@@ -199,7 +199,7 @@
                                             <td>{{$Pimpinan->namaperusahaan}}</td>
                                             <td>{{$Pimpinan->namapimpinan}}</td>
                                             <td>{{$Pimpinan->gelar}}</td>
-                                            <td><img src="{{asset('storage/'.$Pimpinan->photo)}}" alt="" class="img-thumbnail" style="width: 10%;"></td>
+                                            <td><img src="{{asset('storage/'.$Pimpinan->photo)}}" alt="" class="img-thumbnail" style="width: 50%;"></td>
                                             <td>
                                                 <a href="/TablePimpinan/{{$Pimpinan->id}}/edit" class="btn btn-warning">Update</a>
                                                 <br><br>

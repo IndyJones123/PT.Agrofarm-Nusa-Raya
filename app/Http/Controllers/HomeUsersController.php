@@ -11,9 +11,10 @@ class HomeUsersController extends Controller
     public function index()
     {
         $data = DB::select('select * from _data_perusahaan WHERE id = 1');
+        $databranch = DB::select('select photobesar from _data_perusahaan WHERE id != 1');
         $datapimpinan = DB::select('select * from data_pimpinan WHERE namaperusahaan="PT.Agrofarm Nusa Raya"');
         $datapertanyaan = DB::select('select * from _data_pertanyaan WHERE namaperusahaan="PT.Agrofarm Nusa Raya"');
-        return View('HomeUsers', compact(["data"], ["datapimpinan"], ["datapertanyaan"]));
+        return View('HomeUsers', compact(["data"], ["datapimpinan"], ["datapertanyaan"], ["databranch"]));
     }
     public function Branch1()
     {
