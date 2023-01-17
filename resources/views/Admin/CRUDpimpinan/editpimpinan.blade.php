@@ -183,30 +183,42 @@
                             <h6 class="m-0 font-weight-bold text-primary">Edit Data Pimpinan</h6>
                         </div>
                         <div class="container">
-                            <form action="/TablePimpinan/{{$data->id}}" method="POST">
+                            <form action="/TablePimpinan/{{$id}}" method="POST" enctype="multipart/form-data">
                                 @method('put')
                                 @csrf
                                 <table class="mx-auto text-center">
                                     <tr>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" value="{{$data->namaperusahaan}}" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
+                                                <input required="" value="{{$namaperusahaan}}" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Perusahaan</label>
                                             </div>
 
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="text" value="{{$data->namapimpinan}}" name="namapimpinan" autocomplete="off" class="input"></input>
+                                                <input required="" type="text" value="{{$namapimpinan}}" name="namapimpinan" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Pimpinan</label>
+                                            </div>
+                                        </td>
+                                    <tr>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="text" value="{{$gelar}}" name="gelar" autocomplete="off" class="input"></input>
+                                                <label class="user-label">Gelar</label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="text" value="{{$data->gelar}}" name="gelar" autocomplete="off" class="input"></input>
-                                                <label class="user-label">Gelar</label>
+                                                @if($photo)
+                                                <img src="{{asset('storage/'.$photo)}}" alt="" class="img-thumbnail" style="width: 50%;">
+                                                @endif
+                                                <input required="" type="file" value="{{$photo}}" name="photo" autocomplete="off" class="input" accept="image/*"></input>
+
                                             </div>
                                         </td>
+                                    </tr>
+
 
                                     </tr>
 

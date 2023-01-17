@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('namaperusahaan');
             $table->string('namapimpinan');
             $table->string('gelar');
+            $table->string('photo', 300);
             $table->timestamps();
         });
     }

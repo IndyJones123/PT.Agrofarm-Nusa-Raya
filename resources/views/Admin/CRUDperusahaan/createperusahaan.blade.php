@@ -183,7 +183,7 @@
                             <h6 class="m-0 font-weight-bold text-primary">Tambah Data Perusahaan</h6>
                         </div>
                         <div class="container">
-                            <form action="/TablePerusahaan/create/store" method="POST">
+                            <form action="/TablePerusahaan/create/store" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <table class="mx-auto text-center">
                                     <tr>
@@ -191,6 +191,16 @@
                                             <div class="input-group">
                                                 <input required="" type="text" name="namaperusahaan" autocomplete="off" class="input">
                                                 <label class="user-label">Nama Perusahaan (Text)</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="file" name="photobesar" autocomplete="off" class="input" accept="image/*">Background</input>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="file" name="photokecil" autocomplete="off" class="input" accept="image/*">Foto Deskripsi</input>
                                             </div>
                                         </td>
                                         <td>
@@ -206,6 +216,7 @@
                                                 <label class="user-label">Office (Angka)</label>
                                             </div>
                                         </td>
+
                                     </tr>
                                     <tr>
                                         <td>

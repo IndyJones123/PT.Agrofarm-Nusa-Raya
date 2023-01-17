@@ -189,6 +189,8 @@
                                     <thead>
                                         <tr>
                                             <th>Nama Perusahaan</th>
+                                            <th>Gambar Background</th>
+                                            <th>Gambar Deskripsi</th>
                                             <th>Short Deskripsi</th>
                                             <th>Deskripsi</th>
                                             <th>Clients</th>
@@ -204,6 +206,8 @@
                                         @foreach($data as $perusahaan)
                                         <tr>
                                             <td>{{$perusahaan->namaperusahaan}}</td>
+                                            <td><img src="{{asset('storage/'.$perusahaan->photokecil)}}" alt="" class="img-thumbnail" style="width: 10%;"></td>
+                                            <td><img src="{{asset('storage/'.$perusahaan->photobesar)}}" alt="" class="img-thumbnail" style="width: 10%;"></td>
                                             <td>{{$perusahaan->shortdeskripsi}}</td>
                                             <td>{{$perusahaan->deskripsi}}</td>
                                             <td>{{$perusahaan->clients}}</td>

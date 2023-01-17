@@ -183,29 +183,38 @@
                             <h6 class="m-0 font-weight-bold text-primary">Tambah Data Pimpinan</h6>
                         </div>
                         <div class="container">
-                            <form action="/TablePimpinan/create/store" method="POST">
+                            <form action="/TablePimpinan/create/store" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <table class="mx-auto text-center">
                                     <tr>
                                         <td>
                                             <div class="input-group">
-                                                <textarea required="" type="text" name="namaperusahaan" autocomplete="off" class="input"></textarea>
+                                                <input required="" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Perusahaan</label>
                                             </div>
 
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <textarea required="" type="text" name="namapimpinan" autocomplete="off" class="input"></textarea>
+                                                <input required="" type="text" name="namapimpinan" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Pimpinan</label>
                                             </div>
                                         </td>
+                                    <tr>
                                         <td>
                                             <div class="input-group">
-                                                <textarea required="" type="text" name="gelar" autocomplete="off" class="input"></textarea>
+                                                <input required="" type="text" name="gelar" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Gelar Pimpinan</label>
                                             </div>
+                                        <td>
+                                            <div class="input-group">
+                                                <input required="" type="file" name="photo" autocomplete="off" class="input" accept="image/*"></input>
+                                            </div>
                                         </td>
+
+                                        </td>
+                                    </tr>
+
 
                                     </tr>
 

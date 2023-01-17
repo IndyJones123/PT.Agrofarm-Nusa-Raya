@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('_data_perusahaan', function (Blueprint $table) {
             $table->id();
+            $table->string('photobesar', 300);
+            $table->string('photokecil', 300);
             $table->string('namaperusahaan');
             $table->string('shortdeskripsi');
             $table->string('deskripsi');
