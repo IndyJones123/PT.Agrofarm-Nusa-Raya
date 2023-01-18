@@ -183,22 +183,24 @@
 
             </div>
         </section><!-- End Counts Section -->
-
         <!-- ======= Clients Section ======= -->
         <section id="clients" class="clients section-bg" ">
             <div class=" container" data-aos="zoom-in">
-
             <div class=" row">
-                @foreach($databranch as $data2)
-                <div class="col-lg-2 col-md-4 col-6 d-flex ">
-                    <a href="/PTAgriPrimeInternational"><img src="{{asset('storage/'.$data2->photobesar)}}" class="img-fluid" alt=""></a>
-                </div>
-                @endforeach
+
+                <center>
+                    @foreach($databranch as $data2)
+                    <a href="/PTAgriPrimeInternational"><img src="{{asset('storage/'.$data2->photobesar)}}" class="img-fluid" style="margin-left:50px;" alt="" width="100" height="10"></a>
+                    @endforeach
+                </center>
+
 
             </div>
 
             </div>
         </section><!-- End Clients Section -->
+
+
 
         <!-- ======= Products Section ======= -->
         <section id="products" class="portfolio">
