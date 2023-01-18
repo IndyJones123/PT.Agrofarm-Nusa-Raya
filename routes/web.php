@@ -28,6 +28,7 @@ Route::get('/PTTalentaTigaMuda', [HomeUsersController::class, 'Branch2']);
 Route::get('/PTAgriPrimeInternational', [HomeUsersController::class, 'Branch3']);
 Route::get('/PTAgrochem', [HomeUsersController::class, 'Branch4']);
 Route::get('/PTSAP', [HomeUsersController::class, 'Branch5']);
+Route::get('/Products/{id}', [HomeUsersController::class, 'edit']);
 
 
 Auth::routes();

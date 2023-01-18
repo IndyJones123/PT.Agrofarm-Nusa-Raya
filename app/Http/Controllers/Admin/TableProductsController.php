@@ -86,7 +86,7 @@ class TableProductsController extends Controller
             ->update([
                 'namaperusahaan' => $namaperusahaan,
                 'namaproducts' => $namaproducts,
-                'jenisproducts' => $namaproducts,
+                'jenisproducts' => $jenisproducts,
                 'deskripsi' => $deskripsi,
                 'tanggalterbit' => $tanggalterbit,
                 'photo' => $path,

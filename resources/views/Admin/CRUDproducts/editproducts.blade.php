@@ -190,21 +190,30 @@
                                     <tr>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" value="{{$namaperusahaan}}" type="text" name="namaperusahaan" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Nama Perusahaan</label>
+                                                <select name="namaperusahaan" id="">
+                                                    <option value="PT.Agrofarm Nusa Raya">Agrofarm Nusa Raya</option>
+                                                    <option value="PT.Agrochem">Agrochem</option>
+                                                    <option value="PT.SAP">SAP</option>
+                                                </select>
                                             </div>
 
                                         </td>
                                         <td>
                                             <div class="input-group">
                                                 <input required="" type="text" value="{{$namaproducts}}" name="namaproducts" autocomplete="off" class="input"></input>
-                                                <label class="user-label">Nama Pimpinan</label>
+                                                <label class="user-label">Nama Products</label>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="text" value="{{$jenisproducts}}" name="jenisproducts" autocomplete="off" class="input"></input>
                                                 <label class="user-label">Jenis Products</label>
+                                                <select name="jenisproducts" id="">
+                                                    <option value="Hayati">Hayati</option>
+                                                    <option value="Mikro">Mikro</option>
+                                                    <option value="NPK">NPK</option>
+                                                    <option value="Organik">Organik</option>
+                                                </select>
                                             </div>
                                         </td>
 

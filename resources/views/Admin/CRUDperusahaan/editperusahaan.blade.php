@@ -190,8 +190,12 @@
                                     <tr>
                                         <td>
                                             <div class="input-group">
-                                                <input required="" type="text" value="{{$namaperusahaan}}" name="namaperusahaan" autocomplete="off" class="input">
-                                                <label class="user-label">Nama Perusahaan (Text)</label>
+                                                <label class="user-label">Nama Perusahaan</label>
+                                                <select name="namaperusahaan" id="">
+                                                    <option value="PT.Agrofarm Nusa Raya">Agrofarm Nusa Raya</option>
+                                                    <option value="PT.Agrochem">Agrochem</option>
+                                                    <option value="PT.SAP">SAP</option>
+                                                </select>
                                             </div>
                                         </td>
                                         <td>
